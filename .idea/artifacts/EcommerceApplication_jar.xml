@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EcommerceApplication:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/EcommerceApplication_jar</output-path>
+    <root id="archive" name="EcommerceApplication.jar">
+      <element id="module-output" name="EcommerceApplication" />
+    </root>
+  </artifact>
+</component>
