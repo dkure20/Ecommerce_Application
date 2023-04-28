@@ -115,7 +115,6 @@ public class EcommerceApplication extends Product implements EccomerceInterface{
     //Generate a report of all orders, including the product ID, product name, quantity,
    // price, cost of goods sold (COGS), and selling price. Everything is stored in one string.
     public String getOrdersReport() {
-        System.out.println("check");
         String res = "";
         for(String product : products.keySet()){
             Product prod = products.get(product);
@@ -147,6 +146,6 @@ public class EcommerceApplication extends Product implements EccomerceInterface{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return false;
+        return true;
     }
 }
