@@ -9,11 +9,8 @@ This class provides implementation of main functions which were mentioned in mai
 store information in hashmap, with key String which stores productId, and value is Product Class, which
 have all functionality.
  */
-public class EcommerceApplication extends Product implements EccomerceInterface{
+public class EcommerceApplication implements Ecommerce{
     private static Map<String, Product> products= new HashMap<>();
-    public EcommerceApplication() {
-        super();
-    }
     // Add a new product to the catalog or modify an existing one.
     public void saveProduct(String productId, String productName, double productPrice) {
         if(products.containsKey(productId)){
@@ -21,10 +18,12 @@ public class EcommerceApplication extends Product implements EccomerceInterface{
             product.setProductName(productName);
             product.setProductPrice(productPrice);
             products.put(productId, product);
-            return;
+            System.out.println("Product updated successfully");
+        }else{
+            Product product = new Product(productId, productName, productPrice);
+            products.put(productId, product);
+            System.out.println("new product is updated in catalog");
         }
-        Product product = new Product(productId, productName, productPrice);
-        products.put(productId, product);
     }
     //Purchase a product, increasing its balance based on the specified quantity.
     public void purchaseProduct(String productId, int quantity, double price) {
@@ -34,12 +33,14 @@ public class EcommerceApplication extends Product implements EccomerceInterface{
             return;
         }
         product.purchase(quantity, price);
+        System.out.println("Product purchased successfully");
     }
     //Place an order for the product, decreasing its balance according to the specified quantity.
     public void orderProduct(String productId, int quantity) {
         Product product = products.get(productId);
         if (product.getQuantity() >= quantity) {
             product.order(quantity);
+            System.out.println("Product ordered successfully");
             return;
         }
         System.out.println("Product not found or not enough quantity.");
@@ -113,7 +114,7 @@ public class EcommerceApplication extends Product implements EccomerceInterface{
         return popular;
     }
     //Generate a report of all orders, including the product ID, product name, quantity,
-   // price, cost of goods sold (COGS), and selling price. Everything is stored in one string.
+    // price, cost of goods sold (COGS), and selling price. Everything is stored in one string.
     public String getOrdersReport() {
         String res = "";
         for(String product : products.keySet()){

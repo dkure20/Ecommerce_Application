@@ -1,5 +1,4 @@
 package org.example;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +23,6 @@ public class Product implements ProductRequirements{
         this.orderPrices = new ArrayList<>();
         this.orderQuantities = new ArrayList<>();
     }
-    //default constructor
-    public Product() {
-
-    }
     // here are some getters, setter methods for this class.
     public String getProductName(){
         return this.productName;
@@ -42,7 +37,7 @@ public class Product implements ProductRequirements{
         return this.productLastPrice;
     }
     public void setProductName(String productName){
-       this.productName = productName;
+        this.productName = productName;
     }
     public void setProductId(String productId){
         this.productId = productId;
@@ -54,7 +49,7 @@ public class Product implements ProductRequirements{
         this.report =report;
     }
     public String getOrder(){
-       return this.report;
+        return this.report;
     }
     // this method adds quantity and price in List.
     public void purchase(int quantity, double price) {
