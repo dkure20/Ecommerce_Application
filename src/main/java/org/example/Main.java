@@ -41,9 +41,9 @@ public class Main{
                 case "get_orders_report":
                     System.out.println(ec.getOrdersReport());
                     break;
-                case "export_orders_report":
-                    System.out.println(ec.getExportOrder(scanner.next()));
-                    break;
+//                case "export_orders_report":
+//                    System.out.println(ec.getExportOrder(scanner.next()));
+//                    break;
                 case "exit":
                     System.exit(0);
                 default:

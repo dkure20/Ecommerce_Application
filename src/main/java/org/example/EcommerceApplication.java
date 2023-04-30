@@ -2,7 +2,10 @@ package org.example;
 import com.opencsv.CSVWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*
 This class provides implementation of main functions which were mentioned in main class, I decided to
@@ -24,6 +27,12 @@ public class EcommerceApplication implements Ecommerce{
             products.put(productId, product);
             System.out.println("new product is updated in catalog");
         }
+    }
+    public Product getProduct(String productId){
+        if(products.containsKey(productId)){
+            return products.get(productId);
+        }
+        return null;
     }
     //Purchase a product, increasing its balance based on the specified quantity.
     public void purchaseProduct(String productId, int quantity, double price) {
@@ -122,7 +131,7 @@ public class EcommerceApplication implements Ecommerce{
             res+= "productId: " + prod.getProductId() + ",";
             res+= "productName: " + prod.getProductName() + ",";
             res+= "OrderQuantity: " + prod.getOrderQuantities() + ",";
-            res+= "COGS" + prod.findAveragePrice() + ",";
+            res+= "COGS: " + prod.findAveragePrice() + ",";
             res+= "Selling Price: " + prod.getProductPrice() + ",";
             res+= "Price: " + prod.purchasePrice() + ".";
             res+= "\n";
