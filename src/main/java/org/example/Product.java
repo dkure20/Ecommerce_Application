@@ -58,16 +58,12 @@ public class Product implements ProductRequirements{
         this.quantity -= quantity;
         orderHistory.addOrder(quantity,this.productPrice);
     }
-    public int getQuantity(){
-        return this.quantity;
-    }
+    public int getQuantity() { return this.quantity; }
     public int getOrderQuantities(){
         return orderHistory.ordersQuantity();
     }
     public double findAveragePrice() {
         return this.purchaseHistory.getAveragePrice();
     }
-    public double findProductProfit() {
-        return orderHistory.profitFromOrders(findAveragePrice());
-    }
+    public double findProductProfit() { return orderHistory.profitFromOrders(findAveragePrice()); }
 }

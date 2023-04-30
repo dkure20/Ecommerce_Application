@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main{
     public static  void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        EcommerceApplication ec = new EcommerceApplication();
+        Ecommerce ec = new EcommerceApplication();
         while (true) {
             System.out.println("Enter command:");
             String command = scanner.next();
@@ -41,9 +41,9 @@ public class Main{
                 case "get_orders_report":
                     System.out.println(ec.getOrdersReport());
                     break;
-//                case "export_orders_report":
-//                    System.out.println(ec.getExportOrder(scanner.next()));
-//                    break;
+                case "export_orders_report":
+                    System.out.println(ec.getExportOrder(scanner.next()));
+                    break;
                 case "exit":
                     System.exit(0);
                 default:

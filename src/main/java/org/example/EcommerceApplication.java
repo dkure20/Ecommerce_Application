@@ -14,6 +14,9 @@ have all functionality.
  */
 public class EcommerceApplication implements Ecommerce{
     private static Map<String, Product> products= new HashMap<>();
+    public EcommerceApplication(){
+        products= new HashMap<>();
+    }
     // Add a new product to the catalog or modify an existing one.
     public void saveProduct(String productId, String productName, double productPrice) {
         if(products.containsKey(productId)){

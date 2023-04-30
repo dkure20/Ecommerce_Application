@@ -13,5 +13,6 @@ public interface Ecommerce {
     String getFewestProduct();
     String findFewestProduct();
     String getOrdersReport();
+    String getMostPopularProduct();
     boolean getExportOrder(String path);
 }
